@@ -1,0 +1,107 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background:#f2f7d9;
+}
+
+.product-page{
+  max-width:1200px;
+  margin:40px auto;
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:40px;
+  padding:20px;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+.gallery img{
+  width:100%;
+  border-radius:18px;
+}
+
+.price{
+  font-size:26px;
+  font-weight:bold;
+  margin:10px 0 20px;
+}
+
+.qty-box{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin-bottom:20px;
+}
+
+.qty-box button{
+  width:35px;
+  height:35px;
+  border:1px solid #aaa;
+  cursor:pointer;
+}
+
+.add-cart{
+  width:100%;
+  padding:14px;
+  background:#1a120b;
+  color:#fff;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+  font-size:16px;
+}
+
+.msg{
+  margin-top:10px;
+  color:green;
+  font-weight:bold;
+}
+
+@media(max-width:900px){
+  .product-page{
+    grid-template-columns:1fr;
+  }
+}
+/* ORDER NOW BUTTON */
+.order-btn {
+  width: 100%;
+  margin-top: 14px;
+  padding: 14px;
+  border: none;
+  border-radius: 30px;
+  background: #25D366; /* WhatsApp green */
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.order-btn i {
+  font-size: 18px;
+}
+
+/* HOVER EFFECT */
+.order-btn:hover {
+  background: #1ebe5d;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* ACTIVE (CLICK) */
+.order-btn:active {
+  transform: scale(0.95);
+}

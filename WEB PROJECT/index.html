@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>STAR FRAGRANCES</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<header class="header">
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="left">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+
+    <!-- TEXT LOGO -->
+    <div class="logo-text">
+      <div class="star-icon">
+        <img src="images/STAR.png" alt="Star Logo">
+      </div>
+      <span class="star">STAR</span>
+      <span class="fragrances">FRAGRANCES</span>
+    </div>
+
+    <div class="right">
+  <div class="cart-wrapper" onclick="openCart()">
+    🛒
+    <span id="cartCount" class="cart-badge">0</span>
+  </div>
+</div>
+    
+  </div>
+
+
+  <!-- MAIN MENU -->
+  <nav class="main-menu">
+    <a href="#">Home</a>
+    <a href="#">Men</a>
+    <a href="#">Women</a>
+    <a href="#">Travel Set</a>
+    <a href="#" class="deal">Deal Of The Week</a>
+  </nav>
+
+  <!-- CATEGORY MENU -->
+  <nav class="category-menu">
+    <a href="#">About Us</a>
+    <a href="#">Contact Us</a> 
+  </nav>
+
+</header>
+
+
+<!-- SLIDER -->
+<section class="slider">
+
+  <div class="slide active">
+    <img src="images/slide1.jpg">
+    <div class="text">
+      <!-- <span>FRAGRANCES</span>
+      <h1>STAR FRAGRANCES</h1> -->
+    </div>
+  </div>
+
+  <div class="slide">
+    <img src="images/slide2.jpg">
+    <div class="text">
+      <!-- <span>SCENTIMENTS</span>
+      <h1>BAHAAR</h1> -->
+    </div>
+  </div>
+
+  <div class="slide">
+    <img src="images/slide3.jpg">
+    <div class="text">
+      <!-- <span>SCENTIMENTS</span>
+      <h1>BAHAAR</h1> -->
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <div class="controls">
+    <span onclick="prev()">&#10094;</span>
+    <span onclick="next()">&#10095;</span>
+  </div>
+
+  <!-- Dots -->
+  <div class="dots">
+    <span onclick="go(0)" class="active"></span>
+    <span onclick="go(1)"></span>
+    <span onclick="go(2)"></span>
+  </div>
+
+</section>
+
+
+<!-- PRODUCT SECTION -->
+<section class="product-section">
+  <div class="product-grid">
+
+    <div class="product-card">
+      <!-- <span class="badge sale">Sale</span> -->
+      <div class="card-image img-hover">
+      <img src="images/image6.png.jpeg" class="img-front" alt="">
+      <img src="images/perfume1.png" class="img-back" alt="">
+    </div>
+
+    <h3>SIGNATURE</h3>
+      <p class="price">
+        <span class="old">Rs.1200</span>
+        <span class="new">Rs.1000 PKR</span>
+      </p>
+
+      <a href="https://wa.me/923323989474?text=I%20want%20to%20order%20Signature%20Bundle%20Deal"
+     class="whatsapp-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i> SHOP NOW
+  </a>
+
+      
+      <button class="add-to-cart-btn"
+  data-name="SIGNATURE"
+  data-price="1000"
+  data-image="images/image6.png.jpeg">
+  Add to Cart
+</button>
+      
+    </div>
+
+    <div class="product-card">
+      <!-- <span class="badge sale">Sale</span> -->
+      <div class="card-image img-hover">
+      <img src="images/image9.png.jpeg" class="img-front" alt="">
+      <img src="images/image4.png" class="img-back" alt="">
+    </div>
+    
+    <h3>AMBER RUSH</h3>
+      <p class="price">
+        <span class="old">Rs.1000</span>
+        <span class="new">Rs.700 PKR</span>
+      </p>
+
+      <a href="https://wa.me/923323989474?text=I%20want%20to%20order%20Signature%20Bundle%20Deal" 
+     class="whatsapp-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i> SHOP NOW
+  </a>
+       <button class="add-to-cart-btn"
+  data-name="AMBER RUSH"
+  data-price="700"
+  data-image="images/image4.png">
+  Add to Cart
+</button>
+    </div>
+
+    <div class="product-card">
+
+  <!-- ONLY IMAGE CLICKABLE -->
+  <a href="products/signature.html" class="image-link">
+
+    <div class="card-image img-hover">
+      <img src="images/image8.png.jpeg" class="img-front" alt="">
+      <img src="images/image5.png.png" class="img-back" alt="">
+    </div>
+  </a>
+  <h3>DESIRE FRESH</h3>
+
+  <p class="price">
+    <span class="old">Rs.1,000</span>
+    <span class="new">Rs.700 PKR</span>
+  </p>
+  
+
+  <!-- WHATSAPP BUTTON -->
+  <a href="https://wa.me/923323989474?text=I%20want%20to%20order%20Signature%20Bundle%20Deal"
+     class="whatsapp-btn"
+     target="_blank">
+     <i class="fab fa-whatsapp"></i> SHOP NOW
+  </a>
+  <button class="add-to-cart-btn"
+  data-name="DESIRE FRESH"
+  data-price="700"
+  data-image="images/image5.png.PNG">
+  Add to Cart
+</button>
+
+</div>
+
+
+    <div class="product-card">
+      <!-- <span class="badge sold">Sold out</span> -->
+     <div class="card-image img-hover">
+      <img src="images/image7.png.jpeg" class="img-front" alt="">
+      <img src="images/perfume2.png" class="img-back" alt="">
+    </div>
+    <h3>THE LADY</h3>
+      <p class="price">
+        <span class="old">Rs.1,000</span>
+        <span class="new">Rs.700 </span>
+      </p>
+
+      <a href="https://wa.me/923323989474?text=I%20want%20to%20order%20Signature%20Bundle%20Deal" 
+     class="whatsapp-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i> SHOP NOW
+  </a>
+  
+      
+      </p><button class="add-to-cart-btn"
+  data-name="THE LADY"
+  data-price="700"
+  data-image="images/perfume2.png">
+  Add to Cart
+</button>
+    </div>
+
+    <div class="product-card">
+      <!-- <span class="badge sold">Sold out</span> -->
+     <div class="card-image img-hover">
+      <img src="images/image7.png.jpeg" class="img-front" alt="">
+      <img src="images/perfume2.png" class="img-back" alt="">
+    </div>
+    <h3>THE LADY</h3>
+      <p class="price">
+        <span class="old">Rs.1,000</span>
+        <span class="new">Rs.700 </span>
+      </p>
+
+      <a href="https://wa.me/923323989474?text=I%20want%20to%20order%20Signature%20Bundle%20Deal" 
+     class="whatsapp-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i> SHOP NOW
+  </a>
+  
+      
+      </p><button class="add-to-cart-btn"
+  data-name="THE LADY"
+  data-price="700"
+  data-image="images/perfume2.png">
+  Add to Cart
+</button>
+    </div>
+
+    <div class="product-card">
+      <!-- <span class="badge sold">Sold out</span> -->
+     <div class="card-image img-hover">
+      <img src="images/image7.png.jpeg" class="img-front" alt="">
+      <img src="images/perfume2.png" class="img-back" alt="">
+    </div>
+    <h3>THE LADY</h3>
+      <p class="price">
+        <span class="old">Rs.1,000</span>
+        <span class="new">Rs.700 </span>
+      </p>
+
+      <a href="https://wa.me/923323989474?text=I%20want%20to%20order%20Signature%20Bundle%20Deal" 
+     class="whatsapp-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i> SHOP NOW
+  </a>
+  
+      
+      </p><button class="add-to-cart-btn"
+  data-name="THE LADY"
+  data-price="700"
+  data-image="images/perfume2.png">
+  Add to Cart
+</button>
+    </div>
+
+  </div>
+
+  
+
+  
+
+  <!-- Cart Overlay -->
+<div class="cart-overlay" id="cartOverlay"></div>
+
+<!-- Slide Cart Drawer -->
+<div class="cart-drawer" id="cartDrawer">
+
+  <!-- Header -->
+  <div class="cart-header">
+    <h2>🛒 Your Cart</h2>
+    <button class="cart-close" id="closeCart">✖</button>
+  </div>
+
+  <!-- Cart Items -->
+  <div class="cart-items" id="cartItems">
+    <p class="cart-empty">Cart is empty</p>
+  </div>
+
+  <!-- Footer -->
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span>Total:</span>
+      <span id="cartTotal">Rs. 0</span>
+    </div>
+
+    <a href="DETAIL/checkout.html" class="checkout-btn" style="text-decoration:none;display:block;text-align:center;">
+  <i class="fab fa-whatsapp"></i> Checkout
+</a>
+  </div>
+
+</div>
+
+
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>

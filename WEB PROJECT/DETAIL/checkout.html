@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Modern Cart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0d0d0d;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .checkout-card {
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 40px;
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .checkout-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #d4af37, #b8860b, #ffffff, #d4af37);
+            background-size: 300% 300%;
+            animation: glow 4s linear infinite;
+        }
+
+        @keyframes glow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .header i {
+            font-size: 3rem;
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .header p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 18px 20px;
+            background: #111;
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            border-radius: 16px;
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s ease;
+        }
+
+        .form-group input::placeholder {
+            color: rgba(255,255,255,0.4);
+        }
+
+        .form-group input:focus {
+            border-color: #d4af37;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .form-group label {
+            position: absolute;
+            left: 20px;
+            top: 18px;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.95rem;
+            pointer-events: none;
+            transition: 0.3s ease;
+        }
+
+        .form-group input:focus + label,
+        .form-group input:valid + label {
+            top: -10px;
+            left: 15px;
+            font-size: 0.8rem;
+            color: #d4af37;
+            background: #0d0d0d;
+            padding: 0 8px;
+            border-radius: 6px;
+        }
+
+        .order-summary {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 25px 0;
+            border: 1px solid rgba(212,175,55,0.15);
+        }
+
+        .summary-title {
+            color: #d4af37;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        #itemsList {
+            margin-bottom: 10px;
+            color: rgba(255,255,255,0.85);
+        }
+
+        .total-display {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            background: rgba(0,0,0,0.4);
+            border-radius: 10px;
+            border: 1px solid rgba(212,175,55,0.2);
+        }
+
+        .total-amount {
+            color: #d4af37;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+
+        .whatsapp-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #d4af37, #b8860b);
+            color: black;
+            border: none;
+            border-radius: 18px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s ease;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 30px rgba(212,175,55,0.25);
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212,175,55,0.35);
+        }
+
+        .empty-cart {
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .empty-cart i {
+            font-size: 4rem;
+            color: #d4af37;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 480px) {
+            .checkout-card {
+                padding: 25px;
+            }
+            .header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="checkout-card" id="checkoutCard">
+            <div class="header">
+                <i class="fas fa-shopping-cart"></i>
+                <h1>Complete Your Order</h1>
+                <p>Enter your details to confirm order</p>
+            </div>
+
+            <form id="checkoutForm">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder=" " required>
+                    <label for="name"><i class="fas fa-user"></i> Full Name</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="tel" id="phone" name="phone" placeholder=" " required>
+                    <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="address" name="address" placeholder=" " required>
+                    <label for="address"><i class="fas fa-map-marker-alt"></i> Delivery Address</label>
+                </div>
+
+                <div class="order-summary" id="orderSummary" style="display: none;">
+                    <div class="summary-title">
+                        <i class="fas fa-receipt"></i>
+                        Order Summary
+                    </div>
+                    <div id="itemsList"></div>
+                    <div class="total-display">
+                        <span>Total Amount:</span>
+                        <span class="total-amount" id="totalAmount">Rs. 0</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="whatsapp-btn" id="whatsappBtn">
+                    <i class="fab fa-whatsapp"></i>
+                    Confirm Order on WhatsApp
+                </button>
+            </form>
+        </div>
+
+        <div class="checkout-card empty-cart" id="emptyCart" style="display: none;">
+            <i class="fas fa-shopping-bag"></i>
+            <h2>Your cart is empty</h2>
+            <p>Add some items to your cart first</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('checkoutForm');
+            const summary = document.getElementById('orderSummary');
+            const emptyCart = document.getElementById('emptyCart');
+            const checkoutCard = document.getElementById('checkoutCard');
+            const whatsappBtn = document.getElementById('whatsappBtn');
+
+            // Clean number format without .00
+            function formatPKR(amount) {
+                return `Rs. ${Math.round(amount)}`;
+            }
+
+            function loadCart() {
+                const cart = JSON.parse(localStorage.getItem("cart")) || [];
+                
+                if (cart.length === 0) {
+                    checkoutCard.style.display = 'none';
+                    emptyCart.style.display = 'block';
+                    return;
+                }
+
+                checkoutCard.style.display = 'block';
+                emptyCart.style.display = 'none';
+                updateSummary(cart);
+            }
+
+            function updateSummary(cart) {
+                let itemsHtml = '';
+                let total = 0;
+
+                cart.forEach((item) => {
+                    const itemTotal = item.price * (item.qty || 1);
+                    total += itemTotal;
+                    itemsHtml += `
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <span style="color: rgba(255,255,255,0.9);">${item.name} × ${item.qty || 1}</span>
+                            <span style="color: #4ecdc4; font-weight: 600;">${formatPKR(itemTotal)}</span>
+                        </div>
+                    `;
+                });
+
+                document.getElementById('itemsList').innerHTML = itemsHtml;
+                document.getElementById('totalAmount').textContent = formatPKR(total);
+                summary.style.display = 'block';
+            }
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                confirmOrder();
+            });
+
+            function confirmOrder() {
+                const name = document.getElementById("name").value.trim();
+                const phone = document.getElementById("phone").value.trim();
+                const address = document.getElementById("address").value.trim();
+
+                if (!name || !phone || !address) {
+                    alert('Please fill all fields');
+                    return;
+                }
+
+                const cart = JSON.parse(localStorage.getItem("cart")) || [];
+                if (cart.length === 0) {
+                    alert('Cart is empty!');
+                    return;
+                }
+
+                // PKR WhatsApp Message - NO .00
+                let items = "";
+                let total = 0;
+
+                cart.forEach(item => {
+                    const qty = item.qty || 1;
+                    const itemTotal = item.price * qty;
+                    items += `• ${item.name} × ${qty} = ${formatPKR(itemTotal)}\n`;
+                    total += itemTotal;
+                });
+
+                const message = `🛒 *NEW ORDER RECEIVED* 🛒
+
+👤 *Customer Details:*
+Name: ${name}
+Phone: ${phone}
+📍 Address: ${address}
+
+🛍️ *Order Items:*
+${items}
+
+💰 *Total Amount:* ${formatPKR(total)}
+
+⏰ *Order Time:* ${new Date().toLocaleString('en-IN')}`;
+
+                const whatsappNumber = "923323989474";
+                const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+                
+                window.open(url, "_blank");
+                alert('Order sent to WhatsApp! ✅');
+            }
+
+            loadCart();
+            document.getElementById('name').focus();
+        });
+    </script>
+</body>
+</html>

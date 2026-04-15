@@ -1,0 +1,624 @@
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>STAR FRAGRANCES</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<header class="header">
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="left">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+
+    <!-- TEXT LOGO -->
+    <div class="logo-text">
+      <div class="star-icon">
+        <img src="images/STAR.png" alt="Star Logo">
+      </div>
+      <span class="star">STAR</span>
+      <span class="fragrances">FRAGRANCES</span>
+    </div>
+
+    <div class="right">
+      <!-- Cart Icon Added -->
+      <a href="cart.html" class="cart-icon">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-count">0</span>
+      </a>
+    </div>
+    
+  </div>
+
+
+  <!-- MAIN MENU -->
+  <nav class="main-menu">
+    <a href="#">Home</a>
+    <a href="#">Men</a>
+    <a href="#">Women</a>
+    <a href="#">Travel Set</a>
+    <a href="#" class="deal">Deal Of The Week</a>
+  </nav>
+
+  <!-- CATEGORY MENU -->
+  <nav class="category-menu">
+    <a href="#">About Us</a>
+    <a href="#">Contact Us</a> 
+  </nav>
+
+</header>
+
+
+<!-- SLIDER -->
+<section class="slider">
+
+  <div class="slide active">
+    <img src="images/slide1.jpg">
+    <div class="text">
+      <!-- <span>FRAGRANCES</span>
+      <h1>STAR FRAGRANCES</h1> -->
+    </div>
+  </div>
+
+  <div class="slide">
+    <img src="images/slide2.jpg">
+    <div class="text">
+      <!-- <span>SCENTIMENTS</span>
+      <h1>BAHAAR</h1> -->
+    </div>
+  </div>
+
+  <div class="slide">
+    <img src="images/slide3.jpg">
+    <div class="text">
+      <!-- <span>SCENTIMENTS</span>
+      <h1>BAHAAR</h1> -->
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <div class="controls">
+    <span onclick="prev()">&#10094;</span>
+    <span onclick="next()">&#10095;</span>
+  </div>
+
+  <!-- Dots -->
+  <div class="dots">
+    <span onclick="go(0)" class="active"></span>
+    <span onclick="go(1)"></span>
+    <span onclick="go(2)"></span>
+  </div>
+
+</section>
+
+<!-- PRODUCT SECTION -->
+<section class="product-section">
+  <div class="product-grid">
+
+    <div class="product-card">
+      <span class="badge sale">Sale</span>
+      <div class="card-image">
+        <img src="images/image4.png.png" alt="Couple Deal">
+      </div>
+
+      <a href="https://wa.me/923323989474?text=I%20want%20to%20order%20Signature%20Bundle%20Deal"
+     class="whatsapp-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i> SHOP NOW
+  </a>
+
+      <h3>Couple Deal</h3>
+      <p class="price">
+        <span class="old">Rs.5,500</span>
+        <span class="new">Rs.5,000 PKR</span>
+      </p>
+    </div>
+
+    <div class="product-card">
+      <span class="badge sale">Sale</span>
+      <div class="card-image">
+        <img src="images/image8.png.jpeg" alt="">
+      </div>
+
+      <a href="https://wa.me/923323989474?text=I%20want%20to%20order%20Signature%20Bundle%20Deal" 
+     class="whatsapp-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i> Order on WhatsApp
+  </a>
+
+      <h3>Signature Perfume (upgraded)</h3>
+      <p class="price">
+        <span class="old">Rs.3,500</span>
+        <span class="new">Rs.3,000 PKR</span>
+      </p>
+    </div>
+
+    <div class="product-card">
+
+  <!-- ONLY IMAGE CLICKABLE -->
+  <a href="products/signature.html" class="image-link">
+
+    <div class="card-image img-hover">
+      <img src="images/image6.png.jpeg" class="img-front" alt="">
+      <img src="images/perfume1.png" class="img-back" alt="">
+    </div>
+
+  </a>
+
+  <!-- NOT CLICKABLE -->
+  <h3>*** SIGNATURE</h3>
+
+  <p class="price">
+    <span class="old">Rs.1299</span>
+    <span class="new">Rs.1,000 PKR</span>
+  </p>
+
+  <!-- WHATSAPP BUTTON -->
+  <a href="https://wa.me/923323989474?text=I%20want%20to%20order%20Signature%20Bundle%20Deal"
+     class="whatsapp-btn"
+     target="_blank">
+     <i class="fab fa-whatsapp"></i> Order on WhatsApp
+  </a>
+
+</div>
+
+
+    <div class="product-card">
+      <!-- <span class="badge sold">Sold out</span> -->
+      <div class="card-image">
+        <img src="images/image9.png.jpeg" alt="">
+      </div>
+
+      <a href="https://wa.me/923323989474?text=I%20want%20to%20order%20Signature%20Bundle%20Deal" 
+     class="whatsapp-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i> SHOP NOW
+  </a>
+  
+      <h3>AMBER RUSH</h3>
+      <p class="price">
+        <span class="old">Rs.2,199</span>
+        <span class="new">Rs.1,700 PKR</span>
+      </p>
+    </div>
+
+  </div>
+
+
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
+
+CSS
+
+/* GLOBAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* HEADER */
+.header {
+  background-color: #000;
+  color: #fff;
+}
+
+/* TOP BAR */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 12px;
+}
+
+.left i,
+.right i {
+  font-size: 18px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+/* LOGO */
+.logo-text {
+  text-align: center;
+  line-height: 1;
+}
+
+.star-icon img {
+  width: 60px;
+  height: 80px;
+  margin-bottom: -20px;
+}
+
+.logo-text .star {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #d4af37;
+}
+
+.logo-text .fragrances {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 5px;
+  color: #fff;
+  margin-top: 4px;
+}
+
+/* MENUS */
+.main-menu,
+.category-menu {
+  background: black;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.main-menu a,
+.category-menu a {
+  color: white;
+  margin: 0 15px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.main-menu .active {
+  text-decoration: underline;
+}
+
+.category-menu .deal {
+  color: #f2c94c;
+}
+
+/* CART ICON */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* header spacing ke hisaab se adjust karo */
+}
+
+.cart-icon {
+  position: relative;
+  font-size: 22px; /* top bar icon size ke kareeb */
+  color: #fff; /* top bar ke text color ke saath match */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cart-icon i {
+  display: block;
+}
+
+.cart-count {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: red;
+  color: #fff;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 50%;
+  font-weight: bold;
+  line-height: 1;
+}
+
+
+/* SLIDER */
+
+.slider {
+  position: relative;
+  height: 85vh;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TEXT */
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.text h1 {
+  font-size: 120px;
+  color: #1f3b5c;
+  letter-spacing: 8px;
+}
+
+.text span {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 8px 20px;
+  font-size: 22px;
+}
+
+/* CONTROLS */
+.controls span {
+  position: absolute;
+  top: 50%;
+  font-size: 40px;
+  cursor: pointer;
+  color: black;
+  padding: 10px;
+}
+
+.controls span:first-child { left: 20px; }
+.controls span:last-child { right: 20px; }
+
+/* DOTS */
+.dots {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+}
+
+.dots span {
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  display: inline-block;
+  border-radius: 50%;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.dots .active {
+  background: black;
+}
+
+/* MOBILE */
+@media(max-width:768px) {
+  .text h1 { font-size: 60px; }
+}
+
+/* ================= PRODUCTS ================= */
+.product-section {
+  padding: 40px 5%;
+  background: #fff;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  position: relative;
+  background: #f9f9f9;
+  border-radius: 18px;
+  padding: 0px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+/* IMAGE AREA */
+.card-image {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+/* IMAGES */
+.card-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 2s ease;
+}
+
+/* FRONT IMAGE */
+.img-front {
+  z-index: 1;
+}
+
+/* BACK IMAGE */
+.img-back {
+  z-index: 1;
+  visibility: hidden;
+}
+
+/* SAME ZOOM EFFECT */
+.product-card:hover .card-image img {
+  transform: scale(1.08);
+}
+
+/* IMAGE SWAP (SAFE) */
+@media (hover: hover) and (pointer: fine) {
+  .product-card:hover .img-front {
+    visibility: hidden;
+  }
+
+  .product-card:hover .img-back {
+    visibility: visible;
+  }
+}
+
+/* 🔥 SHINE EFFECT — FIXED */
+.card-image::after {
+  content: "";
+  position: absolute;
+  top: -120%;
+  left: -150%;
+  width: 100%;
+  height: 260%;
+  background: linear-gradient(
+    90deg,
+    transparent 10%,
+    rgb(255, 255, 255),
+    transparent 50%
+  );
+  transform: rotate(30deg);
+  filter: blur(2px);
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 5; /* ✅ THIS IS THE FIX */
+}
+
+/* SHINE TRIGGER */
+.card-image:hover::after {
+  animation: shineMove 3s ease forwards;
+}
+
+@keyframes shineMove {
+  from {
+    top: -120%;
+    left: -150%;
+  }
+  to {
+    top: 120%;
+    left: 150%;
+  }
+}
+
+
+
+/* TEXT */
+.product-card h3 {
+  font-size: 19px;
+  margin: 3px 0 6px;
+}
+
+.price {
+  font-size: 15px;
+}
+
+.price .old {
+  text-decoration: line-through;
+  color: #292911;
+  margin-right: 6px;
+}
+
+.price .new {
+  font-weight: bold;
+  color: #000;
+}
+
+/* BADGES */
+.badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  color: #fffffe;
+}
+
+.badge.sale {
+  background: #000;
+}
+
+.badge.sold {
+  background: #555;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp-btn {
+  display: block;
+  margin: 12px auto 8px;
+  padding: 10px;
+  background: #ffffff;
+  color: #000000;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.whatsapp-btn i {
+  margin-right: 6px;
+}
+
+.whatsapp-btn:hover {
+  background: #000000;
+  color: #fffbfb;
+}
+
+/* SOLD OUT → BUTTON HIDE */
+.badge.sold + .whatsapp-btn {
+  display: none;
+}
+
+
+JS
+
+let slides = document.querySelectorAll(".slide");
+let dots = document.querySelectorAll(".dots span");
+let index = 0;
+
+function show(i) {
+  slides.forEach(s => s.classList.remove("active"));
+  dots.forEach(d => d.classList.remove("active"));
+  slides[i].classList.add("active");
+  dots[i].classList.add("active");
+  index = i;
+}
+
+function next() {
+  index = (index + 1) % slides.length;
+  show(index);
+}
+
+function prev() {
+  index = (index - 1 + slides.length) % slides.length;
+  show(index);
+}
+
+function go(i) {
+  show(i);
+}
+
+setInterval(next, 5000);
+
+
